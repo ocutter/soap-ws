@@ -18,7 +18,7 @@
 	<xs:element name="getStudentByIdRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="articleId" type="xs:long"/>
+                <xs:element name="studentId" type="xs:long"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
