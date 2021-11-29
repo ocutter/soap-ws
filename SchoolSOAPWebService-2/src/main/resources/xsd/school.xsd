@@ -1,0 +1,205 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.site.com/ws/school"
+	targetNamespace="http://www.site.com/ws/school"
+	elementFormDefault="qualified">
+
+
+	<xs:complexType name="studentInfo">
+		<xs:sequence>
+			<xs:element name="studentId" type="xs:long" />
+			<xs:element name="parentId" type="xs:long" />
+			<xs:element name="fullName" type="xs:string" />
+			<xs:element name="dateOfBirth" type="xs:date" />
+			<xs:element name="gender" type="xs:string" />
+			<xs:element name="academicDegree" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="getStudentByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="articleId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getStudentByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studentInfo" type="tns:studentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="getStudentByFullNameRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fullName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	 <xs:element name="getStudentByFullNameResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studentInfo" type="tns:studentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>	
+
+	<xs:element name="getStudentsRequest">
+		<xs:complexType />
+	</xs:element>
+
+	<xs:element name="getStudentsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="studentInfo" type="tns:studentInfo"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="serviceStatus">
+		<xs:sequence>
+			<xs:element name="statusCode" type="xs:string" />
+			<xs:element name="message" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="addStudentRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="parentId" type="xs:long" />
+				<xs:element name="fullName" type="xs:string" />
+				<xs:element name="dateOfBirth" type="xs:date" />
+				<xs:element name="gender" type="xs:string" />
+				<xs:element name="academicDegree" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="addStudentResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="serviceStatus" type="tns:serviceStatus" />
+				<xs:element name="studentInfo" type="tns:studentInfo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:complexType name="studentViewInfo">
+		<xs:sequence>
+			<xs:element name="studentId" type="xs:long" />
+			<xs:element name="fullName" type="xs:string" />
+			<xs:element name="dateOfBirth" type="xs:string" />
+			<xs:element name="age" type="xs:int" />
+			<xs:element name="gender" type="xs:string" />
+			<xs:element name="academicDegree" type="xs:string" />
+			<xs:element name="parentId" type="xs:long" />
+			<xs:element name="parentFullName" type="xs:string" />
+			<xs:element name="parentIdCard" type="xs:string" />
+			<xs:element name="parentDOBText" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="getStudentViewByFullNameRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fullName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	 <xs:element name="getStudentViewByFullNameResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studentViewInfo" type="tns:studentViewInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>	
+
+	<xs:element name="getStudentsViewRequest">
+		<xs:complexType />
+	</xs:element>
+
+	<xs:element name="getStudentsViewResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="studentViewInfo" type="tns:studentViewInfo"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="parentInfo">
+		<xs:sequence>
+			<xs:element name="parentId" type="xs:long" />
+			<xs:element name="fullName" type="xs:string" />
+			<xs:element name="dateOfBirthStr" type="xs:string" />
+			<xs:element name="identificationCard" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:element name="getParentByIdentificationCardRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="identificationCard" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getParentByIdentificationCardResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="parentInfo" type="tns:parentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="getParentByFullNameRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fullName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	 <xs:element name="getParentByFullNameResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="parentInfo" type="tns:parentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>	
+
+	<xs:element name="getParentsRequest">
+		<xs:complexType />
+	</xs:element>
+
+	<xs:element name="getParentsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="parentInfo" type="tns:parentInfo"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="addParentRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fullName" type="xs:string" />
+				<xs:element name="identificationCard" type="xs:string" />
+				<xs:element name="dateOfBirthStr" type="xs:date" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="addParentResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="serviceStatus" type="tns:serviceStatus" />
+				<xs:element name="parentInfo" type="tns:parentInfo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema> 
