@@ -8,8 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import java.sql.Date;
-
 @Entity
 @Table(name = "view_student")
 public class StudentView implements Serializable {
