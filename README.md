@@ -16,6 +16,6 @@ Proyecto para cumplir con los siguientes requerimientos:
 Desarrollo hecho en `Java 8`, utilizando `Spring Boot 2.6.0`, `Maven 2.8.4`,`MySQL 8.0.27`, `WSDL4J 1.6.3`, `JAXB API`, `MojoHaus JAXB2 Maven Plugin 2.5.0`.
 
 ## Información
-- `SchoolSOAPClient`: Cliente para consumo del servicio web SOAP.
-- `SchoolSOAPWebService-2`: Producte el Servicio Web SOAP.
+- [`SchoolSOAPClient`](/SchoolSOAPClient/README.md): Cliente para consumo del servicio web SOAP.
+- [`SchoolSOAPWebService-2`](/SchoolSOAPWebService-2/README.md)): Producte el Servicio Web SOAP.
 
