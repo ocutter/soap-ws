@@ -1,4 +1,4 @@
-# soap-ws
+# SchoolSOAPWebService-2
 
 ## Descripción
 
